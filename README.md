@@ -30,7 +30,7 @@ It merges the world’s most groan-worthy puns with just enough motivation to ge
  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/Asheeqa-RD/punspiration
+   git clone https://github.com/Asheeqa-RD/punspiration.git
    cd punspiration
    ```
  
