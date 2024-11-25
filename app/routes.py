@@ -10,7 +10,7 @@ def home():
     
     return jsonify({"message": "Welcome to Punspiration!"})
 
-with open('puns/puns.jsom') as f:
+with open('puns/puns.json') as f:
     PUNS =json.load(f)
     
 @main_bp.route('/puns/<category>') 
