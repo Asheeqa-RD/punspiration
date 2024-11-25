@@ -19,7 +19,7 @@ def get_puns_by_category(category):
     if not filtered_puns :
         return jsonify(format_response("error","No puns found in this category")), 404
     
-    return jsonify(format_response("success","Puns for category :{category}",filtered_puns))
+    return jsonify(format_response("success","Puns for category :{category}",filtered_puns)),999
     
     
     
