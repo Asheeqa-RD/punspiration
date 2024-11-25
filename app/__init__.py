@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 def create_app(config_class='app.config.DevelopmentConfig'):
     """
@@ -6,6 +6,10 @@ def create_app(config_class='app.config.DevelopmentConfig'):
     """
     app = Flask(__name__)
     app.config.from_object(config_class)
+    
+    @app.errorhandler(404)
+    def not_found_error(error):
+        return jsonify({"status":"error","message":"Resource not found"}),404
 
     # Register routes
     from .routes import main_bp
