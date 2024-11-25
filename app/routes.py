@@ -1,4 +1,5 @@
 import json
+import random
 from flask import Blueprint,jsonify
 
 from app.utils import format_response
@@ -20,8 +21,8 @@ def get_puns_by_category(category):
         return jsonify(format_response("error","No puns found in this category")), 404
     
     return jsonify(format_response("success","Puns for category :{category}",filtered_puns)),999
-    
-    
-    
-    
-    
+
+@main_bp.route('/puns/random')
+def get_random_pun():
+    random_pun=random.choice(PUNS)
+    return jsonify(format_response("success","Random pun found",random_pun))
